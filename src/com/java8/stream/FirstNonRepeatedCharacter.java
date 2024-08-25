@@ -44,6 +44,9 @@ public class FirstNonRepeatedCharacter {
 		lHashMap.forEach((k,v)->{
 			if(v==1) {
 				System.out.println("Char: "+k +", Count: "+ v);
+				
+				
+				
 				System.exit(0);
 			}
 		});
