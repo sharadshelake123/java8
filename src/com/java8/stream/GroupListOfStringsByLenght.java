@@ -14,6 +14,8 @@ public class GroupListOfStringsByLenght {
 		 Map<Integer, List<String>> grpString = strList.stream().collect(Collectors.groupingBy(String::length));
 		
 		System.out.println(grpString);
+		
+		
 	}
 
 }

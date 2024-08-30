@@ -24,32 +24,6 @@ public class FirstNonRepeatedCharacter {
 									.orElse(null);
 
 		System.out.println(firstNonRepChar);
-
-		LinkedHashMap<Character, Integer> lHashMap = new LinkedHashMap<>();
-
-		List<Character> charList = str
-									.toLowerCase()
-									.chars()
-									.mapToObj(c -> (char) c)
-									.collect(Collectors.toList());
-
-		charList.forEach(c -> {
-			if (lHashMap.containsKey(c)) {
-				lHashMap.put(c, lHashMap.get(c) + 1);
-			} else {
-				lHashMap.put(c, 1);
-			}
-		});
-		
-		lHashMap.forEach((k,v)->{
-			if(v==1) {
-				System.out.println("Char: "+k +", Count: "+ v);
-				
-				
-				
-				System.exit(0);
-			}
-		});
 		
 	}
 
