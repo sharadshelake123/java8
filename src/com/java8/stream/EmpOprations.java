@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -70,12 +71,19 @@ public class EmpOprations {
 		 
 		 empList.stream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.toList())).entrySet().forEach(System.out::println);
 		 
-		 System.out.println("======================================================================================================================");
+		 empList.stream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.toList())).entrySet().forEach(e->{
+			 System.out.println(e.getKey());
+			 for(Employee l:e.getValue()) {
+				 System.out.println(l.getName());
+			 }
+		 });
+		 
+		 System.out.println("=====================================================================================================================================================================");
 		 System.out.println("10. Find out the highest experienced employees in the organization");
 		 
 		 empList.stream().min(Comparator.comparing(Employee::getYearOfJoining)).stream().forEach(System.out::println);
 		 
-		 System.out.println("======================================================================================================================");
+		 System.out.println("=====================================================================================================================================================================");
 		 
 	}
 
